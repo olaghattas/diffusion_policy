@@ -175,8 +175,12 @@ class RobomimicReplayImageDataset(BaseImageDataset):
                 this_normalizer = get_identity_normalizer_from_stat(stat)
             elif key.endswith('qpos'):
                 this_normalizer = get_range_normalizer_from_stat(stat)
+            # elif key.endswith('ee_states'):
             else:
-                raise RuntimeError('unsupported')
+                print("Unsupported key:", key)
+                # print("Unsupported stat:", stat)
+                this_normalizer = get_range_normalizer_from_stat(stat)
+                # raise RuntimeError('unsupported')
             normalizer[key] = this_normalizer
 
         # image

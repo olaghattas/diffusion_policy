@@ -18,7 +18,7 @@ shape_meta: &shape_meta
     gripper_states:
       shape: [1]
 
-dataset_path: &dataset_path /home/carl_lab/data_franka/60_drawer_bellpepper.hdf5
+dataset_path: &dataset_path /home/carl_lab/ola/stove_pot_bellpepper_lid_100/demo.hdf5
 
 # Checkpointing
 checkpoint:
@@ -89,7 +89,7 @@ policy:
   crop_shape: [180, 180]
   diffusion_step_embed_dim: 128
   down_dims: [512, 1024, 2048]
-  num_inference_steps: 1002
+  num_inference_steps: 100
 
   noise_scheduler:
     _target_: diffusers.schedulers.scheduling_ddpm.DDPMScheduler
